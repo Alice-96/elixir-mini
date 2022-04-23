@@ -1,1 +1,1 @@
-# elixir-mini
+# elixir-mini with TailwindCss
