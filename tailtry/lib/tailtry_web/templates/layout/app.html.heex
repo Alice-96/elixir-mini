@@ -1,14 +1,5 @@
-<main class="container">
+<main role="main" class="container">
   <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
-  <section>
-    <h1 class="text-center font-medium text-4xl">
-      <%= gettext "team %{name}", name: "im" %>
-    </h1>
-  </section>
-  <% @inner_content %>
-  <%= @inner_content %>
-
   <%= @inner_content %>
 </main>

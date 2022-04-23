@@ -1,0 +1,30 @@
+<div class="container mx-auto w-full max-w-screen-lg">
+    <%= if @message != "" do %>
+        <p class="alert alert-info">
+            <%= @message %>
+        </p>
+    <% end %>
+
+    <h2 class="mb-2 px-2 text-4xl">.leexテンプレート化したLiveViewアプリ</h2>
+
+    <form class="bg-gray-100 px-8 pt-6 pb-8 mb-4" phx-submit="submit" phx-change="change">
+        <input type="text" name="query" value={@query} readonly={if !@message, do: "readonly"} placeholder="Please enter keyword" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+        <p>Query: <%= @query %></p>
+        <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" value="search" onclick="blur()" />
+    </form>
+
+    <table class="w-full shadow-md rounded px-8 pt-6 pb-8 mb-4 items-center">
+        <tr>
+            <th class="border px-4 py-2 bg-gray-100">ID</th>
+            <th class="border px-4 py-2 bg-gray-100">タイトル</th>
+            <th class="border px-4 py-2 bg-gray-100">作成日</th>
+        </tr>
+        <%= for result <- @results do %>
+            <tr>
+                <td class="border px-4 py-2"><%= result[ "id" ] %></td>
+                <td class="border px-4 py-2"><%= result[ "title" ] %></td>
+                <td class="border px-4 py-2"><%= result[ "created_at" ] %></td>
+            </tr>
+        <% end %>
+    </table>
+</div>

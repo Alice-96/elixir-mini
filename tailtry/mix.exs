@@ -34,6 +34,7 @@ defmodule Tailtry.MixProject do
   defp deps do
     [
       {:tailwind, "~> 0.1"},
+      {:smallex, "~> 0.2.3"},
       {:phoenix, "~> 1.6.7"},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
