@@ -18,6 +18,7 @@ defmodule TailtryWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/realtime", RealtimeLive.Index, :index
   end
 
   # Other scopes may use custom stacks.
